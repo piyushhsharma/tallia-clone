@@ -1,6 +1,15 @@
+const isGitHub = process.env.GITHUB_ACTIONS === 'true';
+const repo = process.env.GITHUB_REPOSITORY?.split('/')[1] || '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 👇 ensures Next.js exports static files
+  output: 'export',
+  basePath: isGitHub ? `/${repo}` : '',
+  assetPrefix: isGitHub ? `/${repo}/` : '',
+
   allowedDevOrigins: ["*.preview.same-app.com"],
+
   images: {
     unoptimized: true,
     domains: [
