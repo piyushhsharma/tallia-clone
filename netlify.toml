@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [images]
   remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
 
@@ -9,4 +10,17 @@
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 [[plugins]]
+=======
+[images]
+  remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[plugins]]
+>>>>>>> 59c7bd28c810cb1af86eeaa94cc7d2c589aa927a
   package = "@netlify/plugin-nextjs"
