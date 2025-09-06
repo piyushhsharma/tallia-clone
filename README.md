@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This is a Next.js project bootstrapped with create-next-app.
 
 Getting Started
@@ -33,7 +32,6 @@ You can check out the Next.js GitHub repository - your feedback and contribution
 Deploy on Vercel
 The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
 
-=======
 This is a Next.js project bootstrapped with create-next-app.
 
 Getting Started
@@ -68,5 +66,4 @@ You can check out the Next.js GitHub repository - your feedback and contribution
 Deploy on Vercel
 The easiest way to deploy your Next.js app is to use the Vercel Platform from the creators of Next.js.
 
->>>>>>> 59c7bd28c810cb1af86eeaa94cc7d2c589aa927a
 Check out our Next.js deployment documentation for more details.
