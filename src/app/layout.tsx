@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Geist as GeistFont, Geist_Mono as GeistMonoFont } from "next/font/google";
+import { Geist as GeistSans, Geist_Mono as GeistMono } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
 
-const geistSans = GeistFont({
+const geistSans = GeistSans({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = GeistMonoFont({
+const geistMono = GeistMono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
