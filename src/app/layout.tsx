@@ -1,12 +1,12 @@
 // src/app/layout.tsx
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"; // Use a supported font
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
 
-// Load a safe Google font
+// Load font safely
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
