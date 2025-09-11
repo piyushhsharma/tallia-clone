@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   description: 'A Next.js app deployed on Railway',
 }
 
+// ✅ No manual <head>, use Next.js Script inside <body>
 export default function RootLayout({
   children,
 }: {
@@ -30,13 +31,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
-      <head>
+      <body suppressHydrationWarning className="antialiased">
+        {/* External script safely included here */}
         <Script
           crossOrigin="anonymous"
           src="//unpkg.com/same-runtime/dist/index.global.js"
         />
-      </head>
-      <body suppressHydrationWarning className="antialiased">
         <ClientBody>{children}</ClientBody>
       </body>
     </html>
