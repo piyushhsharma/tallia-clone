@@ -1,18 +1,15 @@
+// src/app/layout.tsx
+
 import type { Metadata } from "next";
-import { Geist as GeistSansFont } from "next/font/google";
-import { Geist_Mono as GeistMonoFont } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientBody from "./ClientBody";
 import Script from "next/script";
 
-const geistSans = GeistSansFont({
-  variable: "--font-geist-sans",
+// Load a safe Google font
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = GeistMonoFont({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -26,14 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <head>
+    <html lang="en" className={inter.variable}>
+      <body suppressHydrationWarning className="antialiased">
         <Script
           crossOrigin="anonymous"
           src="//unpkg.com/same-runtime/dist/index.global.js"
+          strategy="beforeInteractive"
         />
-      </head>
-      <body suppressHydrationWarning className="antialiased">
         <ClientBody>{children}</ClientBody>
       </body>
     </html>
