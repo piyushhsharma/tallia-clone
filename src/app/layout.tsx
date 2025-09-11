@@ -2,11 +2,22 @@
 
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Roboto_Mono } from 'next/font/google'
+import ClientBody from './ClientBody'
+import Script from 'next/script'
 
-const inter = Inter({ subsets: ['latin'] })
+// ✅ Use valid Google fonts
+const inter = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+})
 
-// ✅ No duplicate "config" — using proper Next.js metadata
+const robotoMono = Roboto_Mono({
+  variable: '--font-roboto-mono',
+  subsets: ['latin'],
+})
+
+// ✅ Proper Next.js metadata
 export const metadata: Metadata = {
   title: 'My Next App',
   description: 'A Next.js app deployed on Railway',
@@ -18,8 +29,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+      <head>
+        <Script
+          crossOrigin="anonymous"
+          src="//unpkg.com/same-runtime/dist/index.global.js"
+        />
+      </head>
+      <body suppressHydrationWarning className="antialiased">
+        <ClientBody>{children}</ClientBody>
+      </body>
     </html>
   )
 }
