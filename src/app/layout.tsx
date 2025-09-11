@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// ✅ Use a descriptive variable name, not "config"
+// ✅ Rename so it won’t collide with reserved `config`
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
