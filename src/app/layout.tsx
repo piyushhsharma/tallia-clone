@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from "next/font/google"
@@ -26,11 +25,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
-      <body suppressHydrationWarning className="antialiased">
+    <html lang="en">
+      <body
+        suppressHydrationWarning
+        className={`${inter.variable} ${robotoMono.variable} antialiased`}
+      >
         <Script
           crossOrigin="anonymous"
-          src="//unpkg.com/same-runtime/dist/index.global.js"
+          src="https://unpkg.com/same-runtime/dist/index.global.js"
         />
         <ClientBody>{children}</ClientBody>
       </body>
